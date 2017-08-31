@@ -85,14 +85,42 @@ public class HintMsgDialog extends Dialog{
         this.imgId = imgId;
     }
 
+    public void showSuccess(String msg){
+        showHintMsg(R.mipmap.ui_icon_notify_done,msg);
+    }
+
+    public void showErrorMsg(String msg)
+    {
+       showHintMsg(R.mipmap.qmui_icon_notify_error,msg);
+    }
+
+    public void showInfoMsg(String msg)
+    {
+        showHintMsg(R.mipmap.qmui_icon_notify_info,msg);
+    }
+    public void showHintMsg(int imgId,String msg){
+        if(ivIcon!=null){
+            ivIcon.setImageDrawable(ContextCompat.getDrawable(getContext(),imgId));
+            ivIcon.setVisibility(View.VISIBLE);
+        }
+        if(tvMsg!=null){
+            tvMsg.setText(msg);
+        }
+        show();
+        keepTime(tvMsg,2000);
+    }
+
     public void show(long showTime){
         show();
-        tvMsg.postDelayed(new Runnable() {
+        keepTime(tvMsg,2000);
+    }
+
+    public void keepTime(View view,long time){
+        view.postDelayed(new Runnable() {
             @Override
             public void run() {
                 dismiss();
             }
-        },showTime);
+        },time);
     }
-
 }

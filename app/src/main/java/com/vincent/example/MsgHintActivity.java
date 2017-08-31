@@ -36,7 +36,19 @@ public class MsgHintActivity extends AppCompatActivity {
         findViewById(R.id.btn_msg_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.show(1000);
+                dialog.showSuccess("发送成功");
+            }
+        });
+        findViewById(R.id.btn_msg_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.showErrorMsg("发送失败");
+            }
+        });
+        findViewById(R.id.btn_msg_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.showInfoMsg("请勿重复点击");
             }
         });
     }

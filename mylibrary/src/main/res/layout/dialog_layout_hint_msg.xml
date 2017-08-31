@@ -13,13 +13,14 @@
         android:layout_marginLeft="@dimen/size_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
             android:visibility="gone"
             android:id="@+id/iv_icon"
-            android:maxWidth="@dimen/size_44"
-            android:maxHeight="@dimen/size_44"
+            android:maxWidth="@dimen/size_55"
+            android:maxHeight="@dimen/size_55"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
