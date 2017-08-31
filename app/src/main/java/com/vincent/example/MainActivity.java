@@ -66,5 +66,11 @@ public class MainActivity extends AppCompatActivity {
                 }*/
             }
         });
+        findViewById(R.id.btn_msg_hint).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MsgHintActivity.actionStart(MainActivity.this);
+            }
+        });
     }
 }
