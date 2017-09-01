@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 
+import com.vincent.library.toast.ToastUtils2;
 import com.vincent.library.view.HintMsgDialog;
 
 
@@ -49,6 +51,36 @@ public class MsgHintActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.showInfoMsg("请勿重复点击");
+            }
+        });
+        findViewById(R.id.btn_msg_toast_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils2.showSuccessMsg(MsgHintActivity.this,"登录成功");
+            }
+        });
+        findViewById(R.id.btn_msg_toast_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils2.showErrorMsg(MsgHintActivity.this,"登陆失败");
+            }
+        });
+        findViewById(R.id.btn_msg_toast_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils2.showInfoMsg(MsgHintActivity.this,"正在登录，请勿重复点击");
+            }
+        });
+        findViewById(R.id.btn_msg_toast_4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils2.onlyImg(MsgHintActivity.this,R.mipmap.ui_icon_notify_done);
+            }
+        });
+        findViewById(R.id.btn_msg_toast_5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils2.showMsg(MsgHintActivity.this,"哈哈",R.mipmap.ui_icon_notify_done, Gravity.CENTER);
             }
         });
     }

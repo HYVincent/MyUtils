@@ -8,17 +8,47 @@
         android:id="@+id/btn_msg_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="成功提示类型提示框" />
+        android:text="Dialog成功提示类型提示框" />
 
     <Button
         android:id="@+id/btn_msg_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="错误提示类型提示框" />
+        android:text="Dialog错误提示类型提示框" />
 
     <Button
         android:id="@+id/btn_msg_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="信息提示类型提示框" />
+        android:text="Dialog信息提示类型提示框" />
+
+    <Button
+        android:id="@+id/btn_msg_toast_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast成功提示类型提示框" />
+
+    <Button
+        android:id="@+id/btn_msg_toast_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast错误提示类型提示框" />
+
+    <Button
+        android:id="@+id/btn_msg_toast_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast信息提示类型提示框" />
+
+    <Button
+        android:id="@+id/btn_msg_toast_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast信息提示类型提示框只有图片" />
+    <Button
+        android:id="@+id/btn_msg_toast_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast自定义信息和位置" />
+
 </LinearLayout>
