@@ -13,6 +13,7 @@ import com.vincent.library.dialog.LoadingDialog;
 import com.vincent.library.dialog.LoadingDialog2;
 import com.vincent.library.dialog.LoadingDialog3;
 import com.vincent.library.dialog.LoadingDialog4;
+import com.vincent.library.dialog.LoadingDialog5;
 
 /**
  * @name MyUtils
@@ -80,6 +81,12 @@ public class LoadingActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 LoadingDialog4.show(LoadingActivity.this);
+            }
+        });
+        findViewById(R.id.btn_loading_8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadingDialog5.show(LoadingActivity.this);
             }
         });
 

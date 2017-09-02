@@ -47,11 +47,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Loading无文字，背景包含内容" />
+
     <Button
         android:textAllCaps="false"
         android:id="@+id/btn_loading_7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Loading无文字无任何背景包含但是有背景颜色" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading换一种样式" />
 
 </LinearLayout>
