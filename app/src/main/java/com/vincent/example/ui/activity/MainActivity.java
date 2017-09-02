@@ -26,11 +26,14 @@ import com.vincent.library.toast.ToastUtils;
 
 public class MainActivity extends BaseActivity {
 
+    public static MainActivity mainActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hintTitle();
+        mainActivity = this;
         findViewById(R.id.btn_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +68,12 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 IntentActivity.actionStart(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationActivity.actionStart(MainActivity.this);
             }
         });
     }
