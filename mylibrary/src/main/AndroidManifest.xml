@@ -3,10 +3,33 @@
     package="com.vincent.library">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application android:allowBackup="true" android:label="@string/app_name"
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true" android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:supportsRtl="true">
+
+        <activity android:name=".qrcode.activity.CaptureActivity"
+            android:label="扫描二维码"/>
+
+        <service android:name=".apkDownUtils.DownloadService"/>
+
+        <provider
+            android:authorities="com.vincent.library.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+
+        </provider>
 
     </application>
 

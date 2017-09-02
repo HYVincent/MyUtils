@@ -8,6 +8,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.vincent.library.base.MyLibrary;
+
 /**
  * @name MyUtils
  * @class name：com.vincent.library.dialog
@@ -30,7 +32,6 @@ public class ScreenUtils
 		/**
 		 * 获得屏幕高度
 		 *
-		 * @param context
 		 * @return
 		 */
 	public static int getScreenWidth(Context context)
@@ -45,12 +46,11 @@ public class ScreenUtils
 	/**
 	 * 获得屏幕宽度
 	 *
-	 * @param context
 	 * @return
 	 */
-	public static int getScreenHeight(Context context)
+	public static int getScreenHeight()
 	{
-		WindowManager wm = (WindowManager) context
+		WindowManager wm = (WindowManager) MyLibrary.getContext()
 				.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics outMetrics = new DisplayMetrics();
 		wm.getDefaultDisplay().getMetrics(outMetrics);
@@ -60,7 +60,6 @@ public class ScreenUtils
 	/**
 	 * 获得状态栏的高度
 	 *
-	 * @param context
 	 * @return
 	 */
 	public static int getStatusHeight(Context context)
@@ -84,7 +83,6 @@ public class ScreenUtils
 	/**
 	 * 获取当前屏幕截图，包含状态栏
 	 *
-	 * @param activity
 	 * @return
 	 */
 	public static Bitmap snapShotWithStatusBar(Activity activity)
@@ -94,7 +92,7 @@ public class ScreenUtils
 		view.buildDrawingCache();
 		Bitmap bmp = view.getDrawingCache();
 		int width = getScreenWidth(activity);
-		int height = getScreenHeight(activity);
+		int height = getScreenHeight();
 		Bitmap bp = null;
 		bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
 		view.destroyDrawingCache();
@@ -119,7 +117,7 @@ public class ScreenUtils
 		int statusBarHeight = frame.top;
 
 		int width = getScreenWidth(activity);
-		int height = getScreenHeight(activity);
+		int height = getScreenHeight();
 		Bitmap bp = null;
 		bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height
 				- statusBarHeight);

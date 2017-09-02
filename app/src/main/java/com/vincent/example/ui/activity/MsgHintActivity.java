@@ -1,13 +1,14 @@
-package com.vincent.example;
+package com.vincent.example.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
+import com.vincent.example.R;
+import com.vincent.example.base.BaseActivity;
 import com.vincent.library.toast.ToastUtils2;
 import com.vincent.library.view.HintMsgDialog;
 
@@ -24,7 +25,7 @@ import com.vincent.library.view.HintMsgDialog;
  */
 
 
-public class MsgHintActivity extends AppCompatActivity {
+public class MsgHintActivity extends BaseActivity {
 
     private HintMsgDialog dialog;
 
@@ -32,6 +33,7 @@ public class MsgHintActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_msg_hint);
+        setTitleText("提示消息");
         dialog = new HintMsgDialog(this);
         dialog.setMsg("click");
         dialog.setImg(R.mipmap.ui_icon_notify_done);
@@ -56,19 +58,19 @@ public class MsgHintActivity extends AppCompatActivity {
         findViewById(R.id.btn_msg_toast_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils2.showSuccessMsg(MsgHintActivity.this,"登录成功");
+                ToastUtils2.showSuccessMsg("登录成功");
             }
         });
         findViewById(R.id.btn_msg_toast_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils2.showErrorMsg(MsgHintActivity.this,"登陆失败");
+                ToastUtils2.showErrorMsg("登陆失败");
             }
         });
         findViewById(R.id.btn_msg_toast_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils2.showInfoMsg(MsgHintActivity.this,"正在登录，请勿重复点击");
+                ToastUtils2.showInfoMsg("正在登录，请勿重复点击");
             }
         });
         findViewById(R.id.btn_msg_toast_4).setOnClickListener(new View.OnClickListener() {

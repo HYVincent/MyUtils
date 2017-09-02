@@ -5,23 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.vincent.example.MainActivity">
+    tools:context="com.vincent.example.ui.activity.MainActivity">
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/btn_loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="加载动画.." />
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/btn_dialog"
-        android:text="提示对话框"
+        android:text="Dialog对话框 "
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
+        android:textAllCaps="false"
         android:id="@+id/btn_msg_hint"
         android:text="消息提示框"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_qr_code"
+        android:text="扫描二维码"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_xlogs"
+        android:text="XLogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_go_intent"
+        android:text="各种Intent跳转"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

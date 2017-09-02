@@ -28,4 +28,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile project(':mylibrary')
+
+    /** 状态栏沉浸library  http://blog.csdn.net/u011622280/article/details/52587618     */
+    compile 'com.jaeger.statusbaruitl:library:1.2.5'
+//运行时权限
+//    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+
 }

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ll_root"
+    android:background="@color/color_white_ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/color_blue_4562e9"
+        android:id="@+id/root_rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_49">
+
+        <LinearLayout
+            android:id="@+id/root_ll_left"
+            android:layout_width="@dimen/size_44"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/root_iv_left"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:src="@mipmap/icon_common_arrow_left" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/root_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Title"
+            android:textColor="@color/color_white_ffffff"
+            android:textSize="@dimen/text_size_19sp" />
+
+        <LinearLayout
+            android:id="@+id/root_ll_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:textColor="@color/color_white_ffffff"
+                android:layout_marginRight="@dimen/size_15"
+                android:id="@+id/root_tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="啊哈" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white_f1f3f4" />
+
+
+    </RelativeLayout>
+
+
+
+        <ViewStub
+            android:id="@+id/common_stub_import_network_exception"
+            android:inflatedId="@layout/common_layout_network_exception"
+            android:layout="@layout/common_layout_network_exception"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ViewStub
+            android:id="@+id/common_stub_import_no_data"
+            android:inflatedId="@layout/common_layout_no_data"
+            android:layout="@layout/common_layout_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ViewStub
+            android:id="@+id/common_stub_import_loading_data_fail"
+            android:inflatedId="@layout/common_layout_data_loading_fail"
+            android:layout="@layout/common_layout_data_loading_fail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vincent.intent.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_go_music"
+            android:text="跳转到系统音乐播放器"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_linkman_contacts"
+            android:text="跳转到联系人"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_dial"
+            android:text="跳转到拨号"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_cell_phone"
+            android:text="直接拨打电话"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_help"
+            android:text="跳转到辅助功能页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_add_account"
+            android:text="添加账户页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_setting"
+            android:text="跳转到设置页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_wifi_list"
+            android:text="跳转到WIFI列表"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_apn_setting"
+            android:text="跳转到APN设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_permission_manager"
+            android:text="根据包名跳转到对应的权限管理页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_dev_setting"
+            android:text="跳转到开发人员选项"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_app_list"
+            android:text="跳转到应用列表"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_bluetooth_setting"
+            android:text="跳转到蓝牙"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_network"
+            android:text="跳转到移动网络设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_date_setting"
+            android:text="跳转到日期设置页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_phone_status"
+            android:text="跳转到手机状态页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_screen_protect"
+            android:text="跳转到屏幕保护"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_language_input"
+            android:text="跳转到语言和输入法"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_location_service"
+            android:text="跳转到位置服务"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_nework_operator"
+            android:text="跳转到运营商选择页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_nfc_setting"
+            android:text="跳转到NFC设置页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_backup_reset"
+            android:text="跳转到备份和重置页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_safety_setting"
+            android:text="跳转到安全设置页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_souds_setting"
+            android:text="跳转到声音设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_account_sync"
+            android:text="跳转到账号同步页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_go_user_dictionary"
+            android:text="跳转到用户词典"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="跳转到华为权限管理页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_go_permission_act" />
+        <Button
+            android:id="@+id/btn_go_windows_permission"
+            android:text="跳转到华为悬浮窗管理权限页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="跳转到华为受保护app页面"
+            android:id="@+id/btn_go_protect_act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_go_self_motion_start"
+            android:text="跳转到华为自启动权限管理页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_relevance_start"
+            android:text="跳转到华为关联启动权限管理页面"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="跳转到华为手机管家通知管理页面"
+            android:id="@+id/btn_go_notification_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="跳转到清理内存页面"
+            android:id="@+id/btn_go_clear_memory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="跳转到华为手机管家骚扰拦截页面"
+            android:id="@+id/btn_go_interception"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

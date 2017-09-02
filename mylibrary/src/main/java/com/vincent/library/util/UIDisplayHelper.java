@@ -15,6 +15,8 @@ import android.view.Display;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
 
+import com.vincent.library.base.MyLibrary;
+
 import java.lang.reflect.Field;
 
 /**
@@ -30,9 +32,9 @@ public class UIDisplayHelper {
      * DisplayMetrics
      * @return
      */
-    public static DisplayMetrics getDisplayMetrics(Context context){
+    public static DisplayMetrics getDisplayMetrics(){
         DisplayMetrics displayMetrics = new DisplayMetrics();
-        ((WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE))
+        ((WindowManager) MyLibrary.getContext().getApplicationContext().getSystemService(Context.WINDOW_SERVICE))
                 .getDefaultDisplay().getMetrics(displayMetrics);
         return displayMetrics;
     }
@@ -69,9 +71,9 @@ public class UIDisplayHelper {
      * 屏幕密度
      */
     public static float sDensity = 0f;
-    public static float getDensity(Context context){
+    public static float getDensity(){
         if(sDensity == 0f){
-            sDensity = getDisplayMetrics(context).density;
+            sDensity = getDisplayMetrics().density;
         }
         return sDensity;
     }
@@ -81,7 +83,7 @@ public class UIDisplayHelper {
      * @return
      */
     public static int getScreenWidth(Context context){
-        return getDisplayMetrics(context).widthPixels;
+        return getDisplayMetrics().widthPixels;
     }
 
     /**
@@ -89,7 +91,7 @@ public class UIDisplayHelper {
      * @return
      */
     public static int getScreenHeight(Context context){
-        return getDisplayMetrics(context).heightPixels;
+        return getDisplayMetrics().heightPixels;
     }
 
     /**
@@ -135,7 +137,7 @@ public class UIDisplayHelper {
      * @return
      */
     public static int dp2px(Context context, int dp){
-        return (int) (getDensity(context) * dp + 0.5);
+        return (int) (getDensity() * dp + 0.5);
     }
 
     /**
@@ -144,7 +146,7 @@ public class UIDisplayHelper {
      * @return
      */
     public static int px2dp(Context context, int px){
-        return (int) (px/getDensity(context) + 0.5);
+        return (int) (px/getDensity() + 0.5);
     }
 
     /**

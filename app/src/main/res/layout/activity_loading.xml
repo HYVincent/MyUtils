@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading无背景无文字" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading有背景有固定文字" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading有背景有自定义文字内容" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading有背景无文字" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading背景包含视图" />
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading无文字，背景包含内容" />
+
+
+</LinearLayout>

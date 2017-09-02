@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vincent.library.R;
+import com.vincent.library.base.MyLibrary;
 
 /**
  * @name MyUtils
@@ -23,25 +24,25 @@ public class ToastUtils {
 
     private Toast mToast;
 
-    private ToastUtils(Context context, CharSequence text, int duration) {
-        View v = LayoutInflater.from(context).inflate(R.layout.eplay_toast, null);
+    private ToastUtils(CharSequence text, int duration) {
+        View v = LayoutInflater.from(MyLibrary.getContext()).inflate(R.layout.eplay_toast, null);
         TextView textView =  v.findViewById(R.id.textView1);
         textView.setText(text);
-        mToast = new Toast(context);
+        mToast = new Toast(MyLibrary.getContext());
         mToast.setDuration(duration);
         mToast.setView(v);
     }
 
     public static ToastUtils makeText(Context context, CharSequence text, int duration) {
-        return new ToastUtils(context, text, duration);
+        return new ToastUtils(text, duration);
     }
 
     public static void showMsgLong(Context context,String msg){
-         new ToastUtils(context, msg, Toast.LENGTH_LONG).show();
+         new ToastUtils(msg, Toast.LENGTH_LONG).show();
     }
 
     public static void showMsgShort(Context context,String msg){
-        new ToastUtils(context, msg, Toast.LENGTH_SHORT).show();
+        new ToastUtils(msg, Toast.LENGTH_SHORT).show();
     }
 
     public void show() {
