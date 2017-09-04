@@ -10,6 +10,7 @@ import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.Logger;
 import com.elvishew.xlog.XLog;
 import com.elvishew.xlog.printer.AndroidPrinter;
+import com.vincent.library.BuildConfig;
 import com.vincent.library.base.Config;
 import com.vincent.library.base.MyLibrary;
 
@@ -29,11 +30,20 @@ public class XLogs<T> {
 
     private static Logger logger;
     private static XLogs xLogs;
+    private static boolean switchs = BuildConfig.DEBUG;//开关，也可以手动控制..
 
     private XLogs(){
         if(logger == null){
             logger = getLogger();
         }
+    }
+
+    /**
+     * 外部设置的方法
+     * @param switchss
+     */
+    public static void setSwitchs(boolean switchss){
+        switchs = switchss;
     }
 
     public static XLogs getxLogs() {
@@ -71,23 +81,43 @@ public class XLogs<T> {
     }
 
     public void d(T t){
-        getLogger().d(t);
+        if(switchs){
+            getLogger().d(t);
+        }else {
+            getLogger().d("Hello XLogs");
+        };
     }
 
     public void v(T t){
-        getxLogs().v(t);
+        if(switchs){
+            getLogger().v(t);
+        }else {
+            getLogger().v("Hello XLogs");
+        };
     }
 
     public void i(T t){
-        getxLogs().i(t);
+        if(switchs){
+            getLogger().i(t);
+        }else {
+            getLogger().i("Hello XLogs");
+        };
     }
 
     public void w(T t){
-        getxLogs().w(t);
+        if(switchs){
+            getLogger().w(t);
+        }else {
+            getLogger().w("Hello XLogs");
+        };
     }
 
     public void e(T t){
-        getxLogs().e(t);
+        if(switchs){
+            getLogger().e(t);
+        }else {
+            getLogger().e("Hello XLogs");
+        };
     }
 
 }

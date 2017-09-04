@@ -42,7 +42,30 @@ public class XLogsActivity extends BaseActivity {
 //                XLogs.getLogger().w("test....");
 //                XLogs.getLogger().e("test....");
 //                XLogs.getLogger().v("test....");
-                XLogs.getxLogs().d("ffffffffffff");
+                XLog.d("ffffffffffffffffffffffffffff");
+            }
+        });
+        findViewById(R.id.btn_xlogs_test_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                XLogs.getLogger().i("test....");
+//                XLogs.getLogger().d("test....");
+//                XLogs.getLogger().w("test....");
+//                XLogs.getLogger().e("test....");
+//                XLogs.getLogger().v("test....");
+                XLogs.setSwitchs(true);
+                XLog.d("ffffffffffffffffffffffffffff");
+            }
+        });
+        findViewById(R.id.btn_xlogs_test_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                XLogs.getLogger().i("test....");
+//                XLogs.getLogger().d("test....");
+//                XLogs.getLogger().w("test....");
+//                XLogs.getLogger().e("test....");
+//                XLogs.getLogger().v("test....");
+                XLogs.setSwitchs(false);
                 XLog.d("ffffffffffffffffffffffffffff");
             }
         });

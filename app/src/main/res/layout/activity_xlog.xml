@@ -9,4 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="XLogs测试" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_xlogs_test_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="XLogs测试-打开" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_xlogs_test_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="XLogs-关闭" />
 </LinearLayout>
