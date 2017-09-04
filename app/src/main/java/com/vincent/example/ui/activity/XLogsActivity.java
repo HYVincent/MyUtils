@@ -37,24 +37,18 @@ public class XLogsActivity extends BaseActivity {
         findViewById(R.id.btn_xlogs_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                XLogs.getLogger().i("test....");
-//                XLogs.getLogger().d("test....");
-//                XLogs.getLogger().w("test....");
-//                XLogs.getLogger().e("test....");
-//                XLogs.getLogger().v("test....");
-                XLog.d("ffffffffffffffffffffffffffff");
+                XLogs.V("this Xlogs test lever is V");
+                XLogs.I("this Xlogs test lever is I");
+                XLogs.D("this Xlogs test lever is D");
+                XLogs.W("this Xlogs test lever is W");
+                XLogs.E("this Xlogs test lever is E");
             }
         });
         findViewById(R.id.btn_xlogs_test_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                XLogs.getLogger().i("test....");
-//                XLogs.getLogger().d("test....");
-//                XLogs.getLogger().w("test....");
-//                XLogs.getLogger().e("test....");
-//                XLogs.getLogger().v("test....");
                 XLogs.setSwitchs(true);
-                XLog.d("ffffffffffffffffffffffffffff");
+                XLogs.D("XLogs is open...");
             }
         });
         findViewById(R.id.btn_xlogs_test_2).setOnClickListener(new View.OnClickListener() {
@@ -66,7 +60,7 @@ public class XLogsActivity extends BaseActivity {
 //                XLogs.getLogger().e("test....");
 //                XLogs.getLogger().v("test....");
                 XLogs.setSwitchs(false);
-                XLog.d("ffffffffffffffffffffffffffff");
+                XLogs.D("Xlogs is close");
             }
         });
     }
