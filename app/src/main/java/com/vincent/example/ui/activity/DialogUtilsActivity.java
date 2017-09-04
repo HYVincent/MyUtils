@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.vincent.example.R;
 import com.vincent.example.base.BaseActivity;
@@ -73,7 +75,7 @@ public class DialogUtilsActivity extends BaseActivity{
                 DialogUtil.showBottomList( DialogUtilsActivity.this,data,"",3,true, new CommonItemOnClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        ToastUtils.showMsgLong(DialogUtilsActivity.this,data.get(position));
+                        ToastUtils.showMsgLong(data.get(position));
                     }
                 });
             }
@@ -89,9 +91,23 @@ public class DialogUtilsActivity extends BaseActivity{
                 DialogUtil.showBottomList( DialogUtilsActivity.this,data,"请选择",3,true, new CommonItemOnClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        ToastUtils.showMsgLong(DialogUtilsActivity.this,data.get(position));
+                        ToastUtils.showMsgLong(data.get(position));
                     }
                 });
+            }
+        });
+
+        findViewById(R.id.btn_dialog_5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showMsgTime(DialogUtilsActivity.this,"自定义显示时间",100);
+            }
+        });
+        findViewById(R.id.btn_dialog_6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.createToast("自定义显示位置", Toast.LENGTH_LONG);
+                ToastUtils.setGravity(Gravity.CENTER,0,0);
             }
         });
     }

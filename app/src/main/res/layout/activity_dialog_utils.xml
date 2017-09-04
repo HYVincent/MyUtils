@@ -29,4 +29,18 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="底部弹出List列表Dialog(有标题)" />
+
+    <Button
+        android:id="@+id/btn_dialog_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义Toast显示时间" />
+
+    <Button
+        android:id="@+id/btn_dialog_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义Toast显示位置" />
 </LinearLayout>

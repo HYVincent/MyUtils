@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.vincent.example.R;
 import com.vincent.example.base.BaseActivity;
@@ -121,9 +122,7 @@ public class CameraAboutActivity extends BaseActivity {
                     if (TextUtils.isEmpty(utf8Result)) {
                         Log.d(TAG, "onActivityResult: resule is null");
                     } else {
-//                    showMsg(1, utf8Result);
-                        //订单号:utf8Result
-                        ToastUtils.showMsgLong(CameraAboutActivity.this,utf8Result);
+                        ToastUtils.showMsgLong(utf8Result);
                     }
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();

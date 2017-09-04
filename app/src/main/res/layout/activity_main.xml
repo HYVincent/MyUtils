@@ -17,14 +17,14 @@
     <Button
         android:textAllCaps="false"
         android:id="@+id/btn_dialog"
-        android:text="Dialog对话框 "
+        android:text="Toast弹出消息 "
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:textAllCaps="false"
         android:id="@+id/btn_msg_hint"
-        android:text="消息提示框"
+        android:text="Dialog弹出消息"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
