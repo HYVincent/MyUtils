@@ -46,12 +46,6 @@ public class XLogs<T> {
         switchs = switchss;
     }
 
-    public static XLogs getxLogs() {
-        if(xLogs == null){
-            xLogs = new XLogs();
-        }
-        return xLogs;
-    }
 
     /**
      * Print the configured log.

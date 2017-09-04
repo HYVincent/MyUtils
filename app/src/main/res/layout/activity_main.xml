@@ -29,8 +29,8 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:textAllCaps="false"
         android:id="@+id/btn_qr_code"
+        android:textAllCaps="false"
         android:text="扫描二维码"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

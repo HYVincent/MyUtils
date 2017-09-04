@@ -14,8 +14,24 @@ android {
 
     }
     buildTypes {
+
+        debug {
+            //启用代码混淆
+            minifyEnabled true
+            //zip压缩
+            zipAlignEnabled false //启动资源压缩会编译错误  Error:Resource shrinker cannot be used for libraries.
+            //移除无用的resource文件
+            shrinkResources false
+            //混淆规则配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
         release {
-            minifyEnabled false
+            zipAlignEnabled false  //启动资源压缩会编译错误  Error:Resource shrinker cannot be used for libraries.
+            //移除无用的resource文件
+            shrinkResources false  //启动资源压缩会编译错误  Error:Resource shrinker cannot be used for libraries.
+            //开启混淆
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
