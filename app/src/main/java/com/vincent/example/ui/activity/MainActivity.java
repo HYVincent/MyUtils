@@ -76,5 +76,11 @@ public class MainActivity extends BaseActivity {
                 NotificationActivity.actionStart(MainActivity.this);
             }
         });
+        findViewById(R.id.btn_network).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NetworkActivity.actionStart(MainActivity.this);
+            }
+        });
     }
 }

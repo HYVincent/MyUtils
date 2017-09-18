@@ -20,6 +20,13 @@
 
         <service android:name=".apkDownUtils.DownloadService"/>
 
+        <receiver
+            android:name=".network.NetworkChangeListenerUtils">
+            <intent-filter>
+                <action  android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
         <provider
             android:authorities="com.vincent.library.fileprovider"
             android:name="android.support.v4.content.FileProvider"

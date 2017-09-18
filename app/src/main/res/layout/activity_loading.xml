@@ -61,5 +61,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Loading换一种样式" />
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_loading_9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CustomDialog" />
+
 
 </LinearLayout>

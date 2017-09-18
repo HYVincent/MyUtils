@@ -14,6 +14,7 @@ import com.vincent.library.dialog.LoadingDialog2;
 import com.vincent.library.dialog.LoadingDialog3;
 import com.vincent.library.dialog.LoadingDialog4;
 import com.vincent.library.dialog.LoadingDialog5;
+import com.vincent.library.dialog.MyLoadingDialog;
 
 /**
  * @name MyUtils
@@ -35,10 +36,13 @@ public class LoadingActivity extends BaseActivity {
         activity.startActivity(intent);
     }
 
+    private MyLoadingDialog dialog;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+        dialog = new MyLoadingDialog(this);
         setTitleText("Loading Dialog ..");
         findViewById(R.id.btn_loading_1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +91,12 @@ public class LoadingActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 LoadingDialog5.show(LoadingActivity.this);
+            }
+        });
+        findViewById(R.id.btn_loading_9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.shows("加载中..");
             }
         });
 

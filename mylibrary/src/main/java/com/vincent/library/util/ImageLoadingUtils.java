@@ -1,6 +1,7 @@
 package com.vincent.library.util;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
@@ -17,14 +18,12 @@ import com.bumptech.glide.Glide;
 
 public class ImageLoadingUtils {
 
-    private static Context mContext;
-
-    private ImageLoadingUtils(Context context){
-        mContext = context;
+    /**
+     * 图片加载
+     * @param context
+     * @param imageView
+     */
+    public static void loadingImg(Context context, Object o, ImageView imageView){
+        Glide.with(context).load(o).into(imageView);
     }
-
-    public static void loadingImg(String networkUrl){
-//        Glide.with(mContext).load()
-    }
-
 }
