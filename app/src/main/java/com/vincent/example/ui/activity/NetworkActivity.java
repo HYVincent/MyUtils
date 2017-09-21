@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import com.vincent.example.R;
 import com.vincent.example.base.BaseActivity;
+import com.vincent.library.log.XLogs;
 import com.vincent.library.network.NetUtils;
 import com.vincent.library.network.NetworkChangeListenerUtils;
+import com.vincent.library.toast.ToastUtils;
 
 import static com.vincent.library.network.NetUtils.NETWORN_2G;
 import static com.vincent.library.network.NetUtils.NETWORN_3G;
@@ -42,7 +44,37 @@ public class NetworkActivity extends BaseActivity {
     private String str = "当前网络类型为:";
     private String type = "";
 
-    private NetworkChangeListenerUtils listenerUtils;
+    private NetworkChangeListenerUtils listenerUtils = new NetworkChangeListenerUtils(new NetworkChangeListenerUtils.NetworkChangeListener() {
+        @Override
+        public void noNetwork() {
+            ToastUtils.showMsgLong("无网络");
+        }
+
+        @Override
+        public void network2G() {
+            ToastUtils.showMsgLong("2G");
+        }
+
+        @Override
+        public void network3G() {
+            ToastUtils.showMsgLong("3G");
+        }
+
+        @Override
+        public void network4G() {
+            ToastUtils.showMsgLong("4G");
+        }
+
+        @Override
+        public void networkMoble() {
+            ToastUtils.showMsgLong("Moble");
+        }
+
+        @Override
+        public void WIFI() {
+            ToastUtils.showMsgLong("WIFI");
+        }
+    });
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,10 +82,7 @@ public class NetworkActivity extends BaseActivity {
         setContentView(R.layout.activity_network);
         setTitleText("网络相关");
         tvResult = (TextView) findViewById(R.id.tv_result);
-        listenerUtils = new NetworkChangeListenerUtils();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        registerReceiver(listenerUtils,intentFilter);
+        NetworkChangeListenerUtils.register(this,listenerUtils);
         findViewById(R.id.btn_check_network_type).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +106,8 @@ public class NetworkActivity extends BaseActivity {
                         type = "无网络连接";
                         break;
                 }
-                tvResult.setText(str+type);
+//                XLogs.getLogger().d(str+type);
+                ToastUtils.showMsgLong(str+type);
             }
         });
     }
@@ -85,6 +115,6 @@ public class NetworkActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(listenerUtils);
+        NetworkChangeListenerUtils.unRegister(this,listenerUtils);
     }
 }

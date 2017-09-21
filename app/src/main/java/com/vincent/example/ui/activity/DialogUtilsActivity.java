@@ -44,7 +44,8 @@ public class DialogUtilsActivity extends BaseActivity{
         findViewById(R.id.btn_dialog_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogUtil.hintTextDialog(DialogUtilsActivity.this, "Title", "This is msg content", new DialogUtil.CommonActionListener() {
+                DialogUtil.hintTextDialog(DialogUtilsActivity.this, "Title",
+                        "This is msg content", false,false,new DialogUtil.CommonActionListener() {
                     @Override
                     public void action() {
                         ToastUtils2.showSuccessMsg("点击成功");
