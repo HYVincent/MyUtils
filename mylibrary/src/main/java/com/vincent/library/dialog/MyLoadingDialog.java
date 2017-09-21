@@ -58,11 +58,11 @@ public class MyLoadingDialog extends Dialog {
         }
     }
 
-    public void showLoadingDialog(){
+    public void shows(){
        show();
     }
 
-    public void showLoadingDialog(String msg)
+    public void shows(String msg)
     {
         if(tvMsg!=null){
             tvMsg.setText(msg);

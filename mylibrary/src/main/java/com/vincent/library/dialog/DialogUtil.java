@@ -38,24 +38,41 @@ import java.util.List;
 
 public class DialogUtil {
 
+    private static Dialog dialog = null;
+
+    public static void cancelDialog(){
+        if(dialog!=null&&dialog.isShowing()){
+            dialog.dismiss();
+        }
+    }
+
     /**
-     * 消息提示dialog
+     * 消息提示dialog 这是一个全局dialog，可在任意位置弹出来...
      * @param activity
      * @param title
      * @param content
      * @param listener
      */
-    public static void hintTextDialog(Activity activity, String title, String content, final CommonActionListener listener){
+    public static void hintTextDialog(Activity activity, String title, String content, boolean hasCancelButton,boolean isCancel,final CommonActionListener listener){
         View view = LayoutInflater.from(activity).inflate(R.layout.dlg_layout_hint,null,false);
-        final Dialog dialog = new Dialog(activity,R.style.MyDialogStyle);
+        if(dialog == null){
+            dialog = new Dialog(activity,R.style.MyDialogStyle);
+        }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.width = ScreenUtils.getScreenWidth(activity)/5*4;
         dialog.setContentView(view,layoutParams);
-        dialog.setCanceledOnTouchOutside(true);
+        dialog.setCanceledOnTouchOutside(isCancel);
+        dialog.setCancelable(isCancel);
+        dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_TOAST);//需要添加权限  SecurityException: com.hud.help was not granted  this permission: android.permission.WRITE_SETTINGS.
         TextView tvTitle = view.findViewById(R.id.dlg_title);
         TextView tvContent = view.findViewById(R.id.dlg_content);
         TextView tvCancel = view.findViewById(R.id.dlg_cancel_tv);
         TextView tvOk = view.findViewById(R.id.dlg_ok_tv);
+        if(hasCancelButton){
+            tvCancel.setVisibility(View.VISIBLE);
+        }else {
+            tvCancel.setVisibility(View.GONE);
+        }
         tvTitle.setText(title);
         tvContent.setText(content);
         tvCancel.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +90,8 @@ public class DialogUtil {
         });
         dialog.show();
     }
+
+
 
     /**
      * 系统默认的
@@ -145,7 +164,7 @@ public class DialogUtil {
         dialog.show();
     }
 
-   public interface CommonActionListener{
+    public interface CommonActionListener{
         void action();
     }
 

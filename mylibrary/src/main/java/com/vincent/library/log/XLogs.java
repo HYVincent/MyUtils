@@ -46,7 +46,7 @@ public class XLogs {
         return instance;
     }
 
-    private static Logger getLogger() {
+    public static Logger getLogger() {
         if(logger == null){
             logger = initLogger();
         }
@@ -66,8 +66,6 @@ public class XLogs {
     /**
      * Print the configured log.
      */
-
-
     public static void D(Object d){
         debug(d);
     }
