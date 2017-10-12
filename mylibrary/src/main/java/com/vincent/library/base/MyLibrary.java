@@ -1,23 +1,14 @@
 package com.vincent.library.base;
 
-import android.Manifest;
 import android.content.Context;
-import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
 
-import com.elvishew.xlog.BuildConfig;
 import com.elvishew.xlog.LogConfiguration;
-import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
-import com.elvishew.xlog.flattener.ClassicFlattener;
-import com.elvishew.xlog.interceptor.BlacklistTagsFilterInterceptor;
 import com.elvishew.xlog.printer.AndroidPrinter;
 import com.elvishew.xlog.printer.ConsolePrinter;
 import com.elvishew.xlog.printer.Printer;
-import com.elvishew.xlog.printer.SystemPrinter;
 import com.elvishew.xlog.printer.file.FilePrinter;
 import com.elvishew.xlog.printer.file.naming.DateFileNameGenerator;
-import com.vincent.library.util.PermissionUtils;
 
 import java.io.File;
 
@@ -75,17 +66,18 @@ public class MyLibrary {
 
         Printer androidPrinter = new AndroidPrinter();             // 通过 android.util.Log 打印日志的打印器
         Printer SystemPrinter = new ConsolePrinter();               // 通过 System.out.println 打印日志的打印器
-        Printer filePrinter = new FilePrinter                      // 打印日志到文件的打印器
-                .Builder("/sdcard/xlog/")                              // 指定保存日志文件的路径
-                .fileNameGenerator(new DateFileNameGenerator())        // 指定日志文件名生成器，默认为 ChangelessFileNameGenerator("log")
+//        Printer filePrinter = new FilePrinter                      // 打印日志到文件的打印器
+//                .Builder("/sdcard/xlog/")                              // 指定保存日志文件的路径
+//                .fileNameGenerator(new DateFileNameGenerator())        // 指定日志文件名生成器，默认为 ChangelessFileNameGenerator("log")
 //                .backupStrategy(new MyBackupStrategy())                // 指定日志文件备份策略，默认为 FileSizeBackupStrategy(1024 * 1024)
 //                .logFlattener(new MyLogFlattener())                    // 指定日志平铺器，默认为 DefaultLogFlattener
-                .build();
+//                .build();
         XLog.init(//LogLevel.ALL,                                    // 指定日志级别，低于该级别的日志将不会被打印
                 config,                                                // 指定日志配置，如果不指定，会默认使用 new LogConfiguration.Builder().build()
-                androidPrinter,                                        // 添加任意多的打印器。如果没有添加任何打印器，会默认使用 AndroidPrinter
+                androidPrinter                                       // 添加任意多的打印器。如果没有添加任何打印器，会默认使用 AndroidPrinter
 //                SystemPrinter,                                        //如果加上将会使用System.out.p...方式输出。。。
-                filePrinter);
+                //filePrinter
+                );
     }
 
 }

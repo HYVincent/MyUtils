@@ -143,7 +143,7 @@
 }
 
 # for DexGuard only
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
 #Xlog
 -dontwarn com.elvishew.xlog.**

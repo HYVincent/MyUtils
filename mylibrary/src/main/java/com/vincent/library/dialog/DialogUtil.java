@@ -47,7 +47,7 @@ public class DialogUtil {
     }
 
     /**
-     * 消息提示dialog 这是一个全局dialog，可在任意位置弹出来...
+     * 消息提示dialog
      * @param activity
      * @param title
      * @param content

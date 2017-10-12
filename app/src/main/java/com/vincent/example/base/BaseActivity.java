@@ -29,13 +29,11 @@ import android.widget.TextView;
 
 
 import com.jaeger.library.StatusBarUtil;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.vincent.example.R;
 import com.vincent.example.listener.CommonActionListener;
 import com.vincent.library.apkDownUtils.DownloadService;
 import com.vincent.library.dialog.LoadingDialog;
 import com.vincent.library.toast.ToastUtils2;
-import com.vincent.library.util.PermissionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,10 +97,6 @@ public class BaseActivity extends AppCompatActivity implements BackKeyFragmentLi
         IntentFilter intentFilter = new IntentFilter();//网络状态广播注册
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         registerReceiver(networkStatus,intentFilter);
-    }
-
-    public RxPermissions getRxPermissions() {
-        return PermissionUtils.getRxPermissions(this);
     }
 
     /**

@@ -18,14 +18,13 @@ import com.vincent.example.base.BaseActivity;
 import com.vincent.library.qrcode.activity.CaptureActivity;
 import com.vincent.library.qrcode.encoding.EncodingUtils;
 import com.vincent.library.toast.ToastUtils;
-import com.vincent.library.util.PermissionUtils;
 import com.vincent.library.util.ScreenUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
 /**
@@ -44,6 +43,14 @@ public class CameraAboutActivity extends BaseActivity {
     private static final int QR_CODE = 0x11;
     private static final String TAG = CameraAboutActivity.class.getSimpleName();
     private ImageView ivQrCode;
+
+    private static final int PERMISSION_CAMERA = 110;
+    private final String CAMERA = Manifest.permission.CAMERA;//这里是请求单个权限，请求多个权限同理..
+    private final String[] CAMERA_AND_CELL_PHONE = {Manifest.permission.CAMERA,Manifest.permission.CALL_PHONE};
+
+    private boolean hasCameraPermission(){
+        return EasyPermissions.hasPermissions(CameraAboutActivity.this,CAMERA);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,31 +88,25 @@ public class CameraAboutActivity extends BaseActivity {
         });
     }
 
-    private void openScan() {
-        PermissionUtils.getRxPermissions(CameraAboutActivity.this).request(
-                Manifest.permission.CAMERA)//权限名称，多个权限之间逗号分隔开
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean granted) throws Exception {
-                        Log.e(TAG, "{accept}granted=" + granted);//执行顺序——1【多个权限的情况，只有所有的权限均允许的情况下granted==true】
-                        if (granted) { // 在android 6.0之前会默认返回true
-                            CaptureActivity.actionStart(CameraAboutActivity.this,QR_CODE);
-                        } else {
-                            // 未获取权限
-                            showMsg(0,"扫描档口信息需要照相机权限");
-                        }
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-//                        Log.e(TAG, "{accept}");//可能是授权异常的情况下的处理
-                    }
-                }, new Action() {
-                    @Override
-                    public void run() throws Exception {
-//                        Log.e(TAG, "{run}");//执行顺序——2
-                    }
-                });
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @AfterPermissionGranted(PERMISSION_CAMERA)
+    public void openScan() {
+        if(hasCameraPermission()){
+            CaptureActivity.actionStart(CameraAboutActivity.this,QR_CODE);
+        }else {
+            EasyPermissions.requestPermissions(
+                    CameraAboutActivity.this,
+                    getString(R.string.rationale_request_camera_info),
+                    PERMISSION_CAMERA,
+                    CAMERA);
+        }
     }
 
     @Override

@@ -1,3 +1,4 @@
+/*
 package com.vincent.library.util;
 
 import android.Manifest;
@@ -9,6 +10,7 @@ import android.util.Log;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.tbruyelle.rxpermissions2.RxPermissionsFragment;
 
+*/
 /**
  * @name MyUtils
  * @class name：com.vincent.library.util
@@ -18,12 +20,14 @@ import com.tbruyelle.rxpermissions2.RxPermissionsFragment;
  * @change
  * @chang time
  * @class describe
- */
+ *//*
+
 
 public class PermissionUtils {
 
 
-    /**
+    */
+/**
      * getRxPermissions().request(
      Manifest.permission.CAMERA)//权限名称，多个权限之间逗号分隔开
      .subscribe(new Consumer<Boolean>() {
@@ -50,7 +54,8 @@ public class PermissionUtils {
     Log.e(TAG, "{run}");//执行顺序——2
     }
     });
-     */
+     *//*
+
 
 
 
@@ -79,3 +84,4 @@ public class PermissionUtils {
         return rxPermissionsFragment;
     }
 }
+*/

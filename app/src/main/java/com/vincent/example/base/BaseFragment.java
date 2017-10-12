@@ -5,10 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.vincent.library.dialog.DialogUtil;
 import com.vincent.library.dialog.LoadingDialog;
-import com.vincent.library.toast.ToastUtils;
 import com.vincent.library.toast.ToastUtils2;
 
 /**
@@ -33,7 +30,6 @@ public abstract class BaseFragment extends Fragment {
 
     protected BackKeyFragmentListener mBackHandledInterface;
 
-    private RxPermissions rxPermissions;
 
     /**
      * 所有继承BackHandledFragment的子类都将在这个方法中实现物理Back键按下后的逻辑
@@ -78,13 +74,9 @@ public abstract class BaseFragment extends Fragment {
         } else {
             this.mBackHandledInterface = (BackKeyFragmentListener) getActivity();
         }
-        rxPermissions = new RxPermissions(getActivity());
         initVariable();
     }
 
-    public RxPermissions getRxPermissions() {
-        return rxPermissions;
-    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

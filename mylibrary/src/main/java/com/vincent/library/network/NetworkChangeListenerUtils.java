@@ -8,9 +8,9 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
-import com.vincent.library.toast.ToastUtils;
-import com.vincent.library.toast.ToastUtils2;
+import com.vincent.library.log.XLogs;
 
 /**
  * @name MyUtils
@@ -31,6 +31,8 @@ public class NetworkChangeListenerUtils  extends BroadcastReceiver {
     registerReceiver(receiver,intentFilter);*/
 
     /*unregisterReceiver(receiver);*/ //解注册
+
+    private static final String TAG = NetworkChangeListenerUtils.class.getSimpleName();
 
     private NetworkChangeListener listener;
 
@@ -54,13 +56,22 @@ public class NetworkChangeListenerUtils  extends BroadcastReceiver {
     }
 
     public static void register(Activity activity,BroadcastReceiver broadcastReceiver){
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        activity.registerReceiver(broadcastReceiver, intentFilter);
+        if(activity!=null){
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+            activity.registerReceiver(broadcastReceiver, intentFilter);
+        }else {
+            XLogs.getLogger().e("register faile");
+        }
     }
 
     public static void unRegister(Activity activity,BroadcastReceiver broadcastReceiver){
-        activity.unregisterReceiver(broadcastReceiver);
+        if(activity!=null){
+            activity.unregisterReceiver(broadcastReceiver);
+        }else {
+            Log.d(TAG, "unRegister: activity is null..");
+        }
+
     }
 
     @Override

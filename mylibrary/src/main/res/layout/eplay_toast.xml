@@ -13,6 +13,6 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"/>
+        android:textColor="@color/color_black_3d4550"/>
 
 </RelativeLayout>

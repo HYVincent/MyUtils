@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.vincent.example"
         minSdkVersion 18
@@ -70,5 +70,6 @@ dependencies {
     compile 'com.jaeger.statusbaruitl:library:1.2.5'
 //运行时权限
 //    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-
+    /**google的permission Libarary:https://github.com/googlesamples/easypermissions*/
+    compile 'pub.devrel:easypermissions:1.0.1'
 }

@@ -28,7 +28,7 @@
             android:id="@+id/toast_tv_msg"
             android:gravity="center"
             android:textSize="@dimen/text_size_15sp"
-            android:textColor="@color/color_white_ffffff"
+            android:textColor="@color/color_black_3d4550"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

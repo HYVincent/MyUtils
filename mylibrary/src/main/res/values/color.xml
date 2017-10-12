@@ -5,4 +5,8 @@
     <color name="color_black_3d4550">#3d4550</color>
     <color name="color_gray_f1f3f4">#f1f3f4</color>
     <color name="color_black_3B3B3B">#3B3B3B</color>
+    <!--半透明-->
+    <color name="color_black_semitransparent">#e0000000</color>
+    <!--透明-->
+    <color name="color_black_transparency">#00000000</color>
 </resources>
